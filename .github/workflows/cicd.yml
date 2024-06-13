@@ -28,9 +28,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+        
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deployment
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "Deployment is Running"
+          sleep 5
+          echo "Deployment is Completed"
