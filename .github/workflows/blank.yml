@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: environmentsecrets
+name: CI
 
 # Controls when the workflow will run
 on:
@@ -36,5 +36,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-        with:
-           token: ${{secrets.PASSWORD}}
