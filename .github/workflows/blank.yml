@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: environmentsecrets
 
 # Controls when the workflow will run
 on:
@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
         with:
-          token: ${{secrets.PASSWORD}}
+           token: ${{ secrets.PASSWORD }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -36,3 +36,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+        with:
+           token: ${{secrets.PASSWORD}}
