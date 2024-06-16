@@ -38,4 +38,5 @@ jobs:
           echo "Deployment is Running"
           sleep 5
           echo "Deployment is Completed"
-          echo "Today Date is" date
+          echo "Today Date is" 
+          date
