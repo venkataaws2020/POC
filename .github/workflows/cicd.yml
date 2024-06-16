@@ -9,8 +9,8 @@ on:
   #  branches: [ "main" ]
   #pull_request:
   #  branches: [ "main" ]
-  issues:
-    type: opened,closed
+  #issues:
+  #  type: opened,closed
   # Allows you to run this workflow manually from the Actions tab
   schedule:
      - cron: '* * * * *'
