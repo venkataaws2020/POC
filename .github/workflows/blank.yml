@@ -32,3 +32,8 @@ jobs:
           run: |
             ls ${{ github.workspace }}
         - run: echo "🍏 This job's status is ${{ job.status }}."
+        - run: |
+            BRANCH_NAME=$(echo $GITHUB_REF | cut -d'/' -f 3)
+            GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
+            echo "Branch Name is $BRANCH_NAME"
+            echo "GitHub Commit id $GITHUB_SHA_SHORT"
