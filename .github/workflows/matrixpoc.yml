@@ -5,16 +5,16 @@ name: matrixpoc
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #push:
+  #  branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
   #issues:
   #  type: opened,closed
   # Allows you to run this workflow manually from the Actions tab
   #schedule:
   #   - cron: '* * * * *'
-  #workflow_dispatch:
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,3 +31,11 @@ jobs:
     
     steps:
       - run: echo "Hello $${ matrix.os }} $${{ matrix.node }}"
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Secret Value
+        env:
+          MY_SECRET: ${{ secrets.DBUSERNAME }}
+        run: |
+          echo "My secret value is: $MY_SECRET"
