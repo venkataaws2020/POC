@@ -20,6 +20,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   example_matrix:
+    runs-on: ubuntu-latest
     strategy:
       matrix:        
         os: [cat, dog]
