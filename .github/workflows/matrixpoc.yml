@@ -37,6 +37,8 @@ jobs:
       name: development
     steps:
       - name: Print Secret Value
+        run: env
+      - name: Print Secret Value1
         env:
           MY_SECRET: ${{ secrets.PASSWORD }}
         run: |
