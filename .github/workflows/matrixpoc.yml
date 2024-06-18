@@ -1,36 +1,21 @@
-# This is a basic workflow to help you get started with Actions
-
 name: matrixpoc
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  #push:
-  #  branches: [ "main" ]
-  #pull_request:
-  #  branches: [ "main" ]
-  #issues:
-  #  type: opened,closed
-  # Allows you to run this workflow manually from the Actions tab
-  #schedule:
-  #   - cron: '* * * * *'
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   example_matrix:
     runs-on: ubuntu-latest
     strategy:
-      matrix:        
+      matrix:
         os: [cat, dog]
-        node: [pink,brown]
+        node: [pink, brown]
         include:
           - os: puppy
-            node: green            
-    
+            node: green
     steps:
-      - run: echo "Hello $${ matrix.os }} $${{ matrix.node }}"
+      - run: echo "Hello ${{ matrix.os }} ${{ matrix.node }}"
+
   example_job:
     runs-on: ubuntu-latest
     environment:
