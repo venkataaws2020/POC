@@ -36,6 +36,6 @@ jobs:
     steps:
       - name: Print Secret Value
         env:
-          MY_SECRET: ${{ secrets.AWSUSERNAME }}
+          MY_SECRET: ${{ secrets.PASSWORD }}
         run: |
           echo "My secret value is: $MY_SECRET"
